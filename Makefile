@@ -1,13 +1,15 @@
-PREFIX	:= /usr/share
-SRCDIR	:= $(PREFIX)/project
+PREFIX	:= /usr
+SRCDIR	:= $(PREFIX)/share/zipper
 
 define setup
-	mkdir -p $(SRCDIR)
-	install -m 755 lib/*.sh $(SRCDIR)
+	mkdir -p $(SRCDIR)/lib
+	install -m 666 lib/*.sh $(SRCDIR)/lib
+	install -m 755 lazyload.sh $(SRCDIR)
+	install -m 755 src/zipper.sh $(PREFIX)/bin/zipper
 endef
 
 define remove
-	rm -r $(SRCDIR)
+	rm -r $(SRCDIR) $(PREFIX)/bin/zipper
 endef
 
 install:

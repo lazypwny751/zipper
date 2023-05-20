@@ -5,12 +5,12 @@ set -e
 
 # Defining defaults
 export status="true" PREFIX="/usr/share" DO="help" 
-export SRCDIR="${PREFIX}/project"
+export SRCDIR="${PREFIX}/zipper"
 # export PREFIX="${PWD}"
 # export SRCDIR="${PREFIX}"
 
 # Get libraries.
-source "${SRCDIR}/lazyload.sh" "lib/core" "lib/utils"
+source "${SRCDIR}/lazyload.sh" "lib/core" "lib/utils" "lib/zipper"
 
 # Optional variables.
 export CWD="${PWD}"
